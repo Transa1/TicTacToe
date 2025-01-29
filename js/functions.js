@@ -237,3 +237,18 @@ function updateButtonContent() {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    changeGridColor();
+});
+
+function changeGridColor() {
+    const colorPicker = document.getElementById("color-picker");
+    const cells = document.querySelectorAll("td");
+
+    cells.forEach(cell => {
+        if (cell.classList.contains("border-black")) {
+            cell.style.borderColor = colorPicker.value;
+        }
+    });
+}
