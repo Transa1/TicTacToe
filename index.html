@@ -10,25 +10,51 @@
 <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-lg text-center">
         <h1 class="text-3xl font-bold text-gray-800 mb-6">Tic-Tac-Toe</h1>
-        <table class="mx-auto">
+        <div id="timer" class="text-xl font-semibold text-gray-700 mb-4">Time Left: 03:00</div>
+        <select id="theme-select" onchange="changeTheme()" class="mb-4 p-2 border-2 border-gray-300 rounded-lg">
+            <option value="xo">X, O</option>
+            <option value="spies">Good Spy, Evil Spy</option>
+            <option value="tomjerry">Tom and Jerry</option>
+        </select>
+        <table class="mx-auto border-collapse">
             <tr>
-                <td><input type="button" value="" onclick="turn(this, 0)" class="w-20 h-20 border-2 border-gray-300 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></td>
-                <td><input type="button" value="" onclick="turn(this, 1)" class="w-20 h-20 border-2 border-gray-300 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></td>
-                <td><input type="button" value="" onclick="turn(this, 2)" class="w-20 h-20 border-2 border-gray-300 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></td>
+                <td class="border-b-2 border-r-2 border-black">
+                    <button onclick="turn(this, 0)" class="w-20 h-20 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></button>
+                </td>
+                <td class="border-b-2 border-r-2 border-black">
+                    <button onclick="turn(this, 1)" class="w-20 h-20 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></button>
+                </td>
+                <td class="border-b-2 border-black">
+                    <button onclick="turn(this, 2)" class="w-20 h-20 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></button>
+                </td>
             </tr>
             <tr>
-                <td><input type="button" value="" onclick="turn(this, 3)" class="w-20 h-20 border-2 border-gray-300 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></td>
-                <td><input type="button" value="" onclick="turn(this, 4)" class="w-20 h-20 border-2 border-gray-300 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></td>
-                <td><input type="button" value="" onclick="turn(this, 5)" class="w-20 h-20 border-2 border-gray-300 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></td>
+                <td class="border-b-2 border-r-2 border-black">
+                    <button onclick="turn(this, 3)" class="w-20 h-20 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></button>
+                </td>
+                <td class="border-b-2 border-r-2 border-black">
+                    <button onclick="turn(this, 4)" class="w-20 h-20 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></button>
+                </td>
+                <td class="border-b-2 border-black">
+                    <button onclick="turn(this, 5)" class="w-20 h-20 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></button>
+                </td>
             </tr>
             <tr>
-                <td><input type="button" value="" onclick="turn(this, 6)" class="w-20 h-20 border-2 border-gray-300 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></td>
-                <td><input type="button" value="" onclick="turn(this, 7)" class="w-20 h-20 border-2 border-gray-300 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></td>
-                <td><input type="button" value="" onclick="turn(this, 8)" class="w-20 h-20 border-2 border-gray-300 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></td>
+                <td class="border-r-2 border-black">
+                    <button onclick="turn(this, 6)" class="w-20 h-20 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></button>
+                </td>
+                <td class="border-r-2 border-black">
+                    <button onclick="turn(this, 7)" class="w-20 h-20 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></button>
+                </td>
+                <td>
+                    <button onclick="turn(this, 8)" class="w-20 h-20 text-3xl font-bold bg-white hover:bg-gray-50 transition-colors"></button>
+                </td>
             </tr>
-        </table>
-        <h2 id="CurrentTurn" class="text-xl font-semibold text-gray-700 mt-6">Current Turn: X</h2>
-        <button onclick="resetBoard()" class="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">Reset Game</button>
+        </table>        
+        <h2 id="CurrentTurn" class="text-xl font-semibold text-gray-700 mt-6">Current Turn: You</h2>
+        <div onclick="resetBoard()" class="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors cursor-pointer">
+            Reset Game
+        </div>        
     </div>
 </body>
 </html>
